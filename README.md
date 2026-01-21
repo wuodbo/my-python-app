@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🎬 Movie Database Management System
 
 Интерактивная система управления базой данных фильмов с пользовательским интерфейсом на Python.
@@ -28,6 +28,7 @@
 
 ### 2. Установка зависимостей
 ```bash
+
 pip install -r requirements.txt
 =======
 #  Movie Database Management System
@@ -60,4 +61,4 @@ pip install -r requirements.txt
 ### 2. Установка зависимостей
 ```bash
 pip install -r requirements.txt
->>>>>>> eec3580314049f0433236f28e10917e6599bab07
+
