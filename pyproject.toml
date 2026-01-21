@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "movie-database"
+version = "1.0.0"
+description = "Интерактивная система управления фильмами с графическим интерфейсом"
+readme = "README.md"
+authors = [
+    {name = "Ксюша", email = "user@example.com"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Database :: Front-Ends",
+    "Topic :: Multimedia :: Video",
+]
+keywords = ["movie", "database", "gui", "tkinter", "dashboard"]
+
+dependencies = [
+    "pymysql>=1.0.0",
+    "mysql-connector-python>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0",
+    "flake8>=6.0",
+    "pytest>=7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/username/movie-database"
+BugTracker = "https://github.com/username/movie-database/issues"
+
+[project.scripts]
+movie-db = "MovieDB:main"
+
+[tool.setuptools]
+packages = ["."]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.md", "*.sql"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+# Конфигурация для создания исполняемого файла
+[tool.pyinstaller]
+console = true
+onefile = true
+name = "MovieDatabase"
+icon = "icon.ico"
+add-data = ["*.py:."]
+hidden-imports = ["pymysql", "tkinter"]
